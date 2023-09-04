@@ -3,6 +3,11 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
+//use App\User;
+
+//user class is not fouund
+
+
 
 class UserTest extends TestCase
 {
@@ -14,7 +19,7 @@ class UserTest extends TestCase
     }
 
     public function test_user_duplication(){
-        $user1 = User::make([
+        $user3 = User::make([
             'name'=>'saara',
             'email'=>'saara@'
         ]);
@@ -22,7 +27,7 @@ class UserTest extends TestCase
             'name'=>'saara',
             'email'=>'saara@'
         ]);
-        $this->assertTrue($user1->name != $user2->name);
+        $this->assertTrue($user->name != $user2->name);
     }
 }
 
