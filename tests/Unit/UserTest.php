@@ -1,7 +1,7 @@
 <?php
 
 namespace Tests\Unit;
-
+use App\Models\User;
 use Tests\TestCase;
 //use App\User;
 
@@ -12,22 +12,30 @@ use Tests\TestCase;
 class UserTest extends TestCase
 {
 
-    public function test_login_form(){
+    public function test_login_form():void
+    {
         $response = $this->get('/login');
 
         $response->assertStatus(200);
     }
 
-    public function test_user_duplication(){
-        $user3 = User::make([
-            'name'=>'saara',
-            'email'=>'saara@'
-        ]);
-        $user2 = User::make([
-            'name'=>'saara',
-            'email'=>'saara@'
-        ]);
-        $this->assertTrue($user->name != $user2->name);
-    }
-}
+    public function test_register_form():void
+    {
+        $response = $this->get('/register');
 
+        $response->assertStatus(200);
+    }
+
+//     public function test_delete_user()
+//     {
+//         $user = User::factory()->count(1)->make();
+
+//         $user = User::first();
+
+//         if($user){
+//             $user->delete();   
+//         }
+//         $this->assertTure(true);
+//     }
+// }
+}
